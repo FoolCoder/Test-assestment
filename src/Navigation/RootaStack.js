@@ -20,10 +20,18 @@ const MovieStack = () => {
   const {Navigator, Screen} = createNativeStackNavigator();
   return (
     <Navigator
-      screenOptions={{headerShown: false, animation: 'slide_from_right'}}
+      screenOptions={{animation: 'slide_from_right'}}
       initialRouteName="movieList">
-      <Screen name="movieList" component={MoviewList} />
-      <Screen name="movieDetails" component={MoviewDetails} />
+      <Screen
+        name="movieList"
+        component={MoviewList}
+        options={{title: 'Movies List'}}
+      />
+      <Screen
+        name="movieDetails"
+        component={MoviewDetails}
+        options={{title: 'Movies Details'}}
+      />
     </Navigator>
   );
 };

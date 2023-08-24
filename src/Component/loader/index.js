@@ -1,6 +1,7 @@
 import {View, ActivityIndicator} from 'react-native';
 import React from 'react';
 import {hp, wp} from '../responsive';
+import {colors} from '../../constant';
 
 function Loader() {
   return (

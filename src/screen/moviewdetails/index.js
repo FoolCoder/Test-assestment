@@ -15,12 +15,14 @@ const MoviewDetails = ({route: {params}}) => {
     getMovies();
   }, []);
   const getMovies = async () => {
+    setLoading(true);
     try {
       const response = await apiRequest(`api/movies/${id}`);
       setMovie(response);
     } catch (error) {
       console.error(error);
     }
+    setLoading(false);
   };
   const handlePress = useCallback(async () => {
     const supported = await Linking.canOpenURL(movie?.imdb_url);

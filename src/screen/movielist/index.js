@@ -15,12 +15,14 @@ const MoviewList = () => {
     getMovies();
   }, []);
   const getMovies = async () => {
+    setLoading(true);
     try {
       const response = await apiRequest('api/movies');
       setMovies(response);
     } catch (error) {
       console.error(error);
     }
+    setLoading(false);
   };
   const renderMovies = ({item, index}) => {
     return (

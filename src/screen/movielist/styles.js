@@ -22,5 +22,6 @@ export default StyleSheet.create({
     fontSize: wp(4),
     fontWeight: '700',
     color: colors.primaryDark,
+    width: wp(65),
   },
 });

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {hp, wp} from '../../Component/responsive';
+import {hp, wp} from '../../component/responsive';
 import {colors} from '../../constant';
 export default StyleSheet.create({
   block: {

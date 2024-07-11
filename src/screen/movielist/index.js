@@ -1,6 +1,6 @@
 import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native';
 import React, {useState, useEffect} from 'react';
-import Loader from '../../Component/loader';
+import Loader from '../../component/loader';
 import {apiRequest} from '../../hooks';
 import {colors} from '../../constant';
 import styles from './styles';
@@ -21,8 +21,9 @@ const MoviewList = () => {
       setMovies(response);
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
   const renderMovies = ({item, index}) => {
     return (

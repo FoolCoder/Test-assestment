@@ -1,11 +1,11 @@
 import {View, Text, Image, ScrollView, Linking} from 'react-native';
 import React, {useState, useEffect, useCallback} from 'react';
 import {apiRequest} from '../../hooks';
-import Loader from '../../Component/loader';
+import Loader from '../../component/loader';
 import {colors} from '../../constant';
 import {img} from '../../constant/image';
 import styles from './styles';
-import {wp} from '../../Component/responsive';
+import {wp} from '../../component/responsive';
 
 const MoviewDetails = ({route: {params}}) => {
   const [loading, setLoading] = useState(false);

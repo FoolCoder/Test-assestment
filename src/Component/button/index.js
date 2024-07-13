@@ -3,9 +3,14 @@ import React from 'react';
 import {wp} from '../responsive';
 import {play} from '../../constant/image';
 
-const Button = ({btntitle = '', bgc = ''}) => {
+const Button = ({btntitle = '', bgc = '', onPress, width = null}) => {
   return (
-    <TouchableOpacity style={[styles.btn, {backgroundColor: bgc || null}]}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[
+        styles.btn,
+        {backgroundColor: bgc || null, width: width || wp(68)},
+      ]}>
       {bgc === '' && (
         <Image source={play} style={{width: 8, height: 12, right: 10}} />
       )}

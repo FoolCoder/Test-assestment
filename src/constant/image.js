@@ -18,6 +18,12 @@ import watch from '../assets/watch.png';
 import mask from '../assets/Mask.png';
 import left from '../assets/left.png';
 import play from '../assets/play.png';
+import arrow from '../assets/arrow.png';
+import map from '../assets/Map.png';
+import selected from '../assets/Seat.png';
+import vip from '../assets/vip.png';
+import notava from '../assets/notava.png';
+import regular from '../assets/regular.png';
 
 export {
   img,
@@ -40,4 +46,10 @@ export {
   mask,
   left,
   play,
+  arrow,
+  map,
+  selected,
+  vip,
+  notava,
+  regular,
 };

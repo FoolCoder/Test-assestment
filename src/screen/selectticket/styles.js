@@ -1,0 +1,73 @@
+import {StyleSheet} from 'react-native';
+export const styles = StyleSheet.create({
+  head: {
+    width: '100%',
+    height: 123,
+    backgroundColor: '#fff',
+  },
+  headrow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
+  },
+  arrow: {width: 15, height: 18, right: 50},
+  map: {
+    width: '90%',
+    height: 190,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 80,
+    alignSelf: 'center',
+  },
+  line: {
+    width: '90%',
+    height: 5,
+    backgroundColor: '#202C4330',
+    alignSelf: 'center',
+    borderRadius: 2,
+    marginTop: 120,
+  },
+  footer: {
+    backgroundColor: '#fff',
+    width: '100%',
+    height: '50%',
+    paddingBottom: 20,
+  },
+  seats: {
+    flexDirection: 'row',
+    width: '90%',
+    flexWrap: 'wrap',
+    marginTop: 20,
+  },
+  seatbox: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  img: {
+    width: 17,
+    height: 16,
+  },
+  rows: {
+    marginLeft: 20,
+    marginTop: 15,
+    backgroundColor: '#A6A6A61A',
+    width: 100,
+    height: 30,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  price: {
+    marginLeft: 20,
+    backgroundColor: '#A6A6A61A',
+    width: 108,
+    height: 50,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

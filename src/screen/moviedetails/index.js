@@ -62,7 +62,16 @@ const MoviewDetails = ({route: {params}}) => {
         <Text style={{color: '#fff', fontSize: 16}}>
           In Theater {moment(movie?.release_date).format('MMMM DD YYYY')}
         </Text>
-        <Button btntitle="Get Ticket" bgc="#61C3F2" />
+        <Button
+          btntitle="Get Ticket"
+          bgc="#61C3F2"
+          onPress={() =>
+            navigation.navigate('Ticket', {
+              name: movie?.title,
+              date: movie?.release_date,
+            })
+          }
+        />
         <Button btntitle="Watch Trailer" />
         <View style={{height: 10}} />
       </ImageBackground>

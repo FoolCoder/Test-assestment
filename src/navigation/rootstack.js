@@ -8,6 +8,8 @@ import Tabbar from '../navigation/tabbar';
 import Dashboard from '../screen/dashboard';
 import Media from '../screen/media';
 import More from '../screen/more';
+import Ticket from '../screen/ticket';
+import SelectTicket from '../screen/selectticket';
 
 export default function RootStack() {
   const {Navigator, Screen} = createNativeStackNavigator();
@@ -55,6 +57,12 @@ const MovieStack = () => {
       <Screen
         name="SearchMovies"
         component={SearchMovies}
+        options={{headerShown: false}}
+      />
+      <Screen name="Ticket" component={Ticket} options={{headerShown: false}} />
+      <Screen
+        name="SelectTicket"
+        component={SelectTicket}
         options={{headerShown: false}}
       />
     </Navigator>

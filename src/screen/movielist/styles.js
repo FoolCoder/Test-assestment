@@ -18,7 +18,6 @@ export default StyleSheet.create({
     padding: 8,
     alignSelf: 'center',
     backgroundColor: '#fff',
-    elevation: 1,
     borderRadius: 10,
     marginVertical: 6,
     flexDirection: 'row',

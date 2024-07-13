@@ -51,8 +51,8 @@ export const styles = StyleSheet.create({
     height: 1,
   },
   categoryimg: {
-    width: 162,
-    height: 120,
+    width: wp(45),
+    height: hp(16),
     marginVertical: 4,
     justifyContent: 'flex-end',
     paddingLeft: 10,

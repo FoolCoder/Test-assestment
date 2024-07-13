@@ -1,24 +1,38 @@
-import {View, Text, FlatList, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  ImageBackground,
+  StatusBar,
+} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import Loader from '../../component/loader';
 import {apiRequest} from '../../hooks';
 import {colors} from '../../constant';
 import styles from './styles';
-import {img} from '../../constant/image';
-import {useNavigation} from '@react-navigation/native';
+import {img, search} from '../../constant/image';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import {showBottomTabbar} from '../../helper';
 
 const MoviewList = () => {
-  const navigatoin = useNavigation();
+  const navigation = useNavigation();
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
+  useFocusEffect(
+    React.useCallback(() => {
+      showBottomTabbar(navigation);
+    }, []),
+  );
   useEffect(() => {
     getMovies();
   }, []);
   const getMovies = async () => {
     setLoading(true);
     try {
-      const response = await apiRequest('api/movies');
-      setMovies(response);
+      const response = await apiRequest('movie/upcoming');
+      setMovies(response?.results);
     } catch (error) {
       console.error(error);
     } finally {
@@ -28,13 +42,10 @@ const MoviewList = () => {
   const renderMovies = ({item, index}) => {
     return (
       <TouchableOpacity
-        onPress={() => navigatoin.navigate('movieDetails', {id: item?.id})}
-        style={styles.block}>
-        <Image style={styles.img} source={img} />
-        <View style={{padding: 8}}>
-          <Text style={styles.txt}>{item?.movie}</Text>
-          <Text style={styles.txt}>{item?.rating}/10</Text>
-        </View>
+        onPress={() => navigation.navigate('movieDetails', {id: item?.id})}>
+        <ImageBackground style={styles.block} source={img}>
+          <Text style={styles.name}>{item?.title}</Text>
+        </ImageBackground>
       </TouchableOpacity>
     );
   };
@@ -42,6 +53,21 @@ const MoviewList = () => {
     <Loader />
   ) : (
     <View style={{flex: 1, backgroundColor: colors.bgc}}>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
+      <View style={{backgroundColor: '#fff'}}>
+        <View style={styles.headerrow}>
+          <Text style={{fontSize: 16, color: '#202C43'}}>Watch</Text>
+          <TouchableOpacity
+            hitSlop={{top: 10, bottom: 10, right: 10, left: 10}}
+            onPress={() => navigation.navigate('SearchMovies')}>
+            <Image source={search} style={{width: 15, height: 15}} />
+          </TouchableOpacity>
+        </View>
+      </View>
       <FlatList
         data={movies}
         keyExtractor={(item, index) => index.toString()}

@@ -47,7 +47,7 @@ const SelectTicket = ({route: {params}}) => {
             style={{
               alignItems: 'center',
               justifyContent: 'center',
-              width: 200,
+              width: 300,
             }}>
             <Text style={{fontSize: 16, color: '#202C43'}}>{name}</Text>
             <Text style={{fontSize: 12, color: '#61C3F2'}}>

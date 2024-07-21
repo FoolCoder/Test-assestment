@@ -39,7 +39,7 @@ const Ticket = ({route: {params}}) => {
             style={{
               alignItems: 'center',
               justifyContent: 'center',
-              width: 200,
+              width: 300,
             }}>
             <Text
               numberOfLines={2}

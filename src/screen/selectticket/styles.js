@@ -1,9 +1,12 @@
 import {StyleSheet} from 'react-native';
+import {hp} from '../../component/responsive';
 export const styles = StyleSheet.create({
   head: {
     width: '100%',
-    height: 123,
+    height: hp(15),
     backgroundColor: '#fff',
+    justifyContent: 'flex-end',
+    paddingBottom: 15,
   },
   headrow: {
     flexDirection: 'row',
@@ -11,14 +14,14 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 50,
   },
-  arrow: {width: 15, height: 18, right: 50},
+  arrow: {width: 7.5, height: 15, right: 50, bottom: 10},
   map: {
     width: '90%',
     height: 190,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 80,
+    marginTop: 100,
     alignSelf: 'center',
   },
   line: {
@@ -34,6 +37,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: '50%',
     paddingBottom: 20,
+    marginTop: 8,
   },
   seats: {
     flexDirection: 'row',
@@ -69,5 +73,21 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  pay: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '95%',
+    marginTop: 10,
+  },
+  zoom: {
+    flexDirection: 'row',
+    alignSelf: 'flex-end',
+    paddingRight: 20,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    top: 100,
+    width: 90,
   },
 });

@@ -57,7 +57,7 @@ const SearchMovies = () => {
     clearTimeout(timeout.current);
     timeout.current = setTimeout(() => {
       searchingMovies(value);
-    }, 2000);
+    }, 1000);
   };
   const renderMovies = ({item, index}) => {
     return (
@@ -85,7 +85,7 @@ const SearchMovies = () => {
     <>
       {flag && (
         <>
-          <Text style={[styles.name, {marginTop: 15, paddingBottom: 8}]}>
+          <Text style={[styles.name, {paddingBottom: 8}]}>
             {searhedMovies.length} result found
           </Text>
           <View style={styles.line} />
@@ -100,7 +100,7 @@ const SearchMovies = () => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <View style={{backgroundColor: '#fff', height: hp(15)}}>
+      <View style={styles.head}>
         <View style={styles.input}>
           <Image source={search} style={{width: 15, height: 15}} />
           <TextInput
@@ -134,7 +134,14 @@ const SearchMovies = () => {
             alignItems: 'center',
           }
         }
-        style={{width: '92%', alignSelf: 'center'}}
+        style={{
+          width: '92%',
+          alignSelf: 'center',
+          paddingTop: 25,
+        }}
+        contentContainerStyle={{
+          paddingBottom: 35,
+        }}
         keyExtractor={(item, index) => index.toString()}
         removeClippedSubviews
         windowSize={10}

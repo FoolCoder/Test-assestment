@@ -4,6 +4,12 @@ import {tabs} from './tabs';
 import styles from './styles';
 import {colors} from '../constant';
 
+const dim = [
+  {width: 16, height: 16},
+  {width: 18, height: 18},
+  {width: 18, height: 18},
+  {width: 22, height: 22},
+];
 const BottomTab = ({state, navigation, descriptors, ...rest}) => {
   const focusedOptions = descriptors[state.routes[state.index].key].options;
   if (focusedOptions?.tabBarStyle?.display === 'none') {
@@ -20,7 +26,10 @@ const BottomTab = ({state, navigation, descriptors, ...rest}) => {
             onPress={() => {
               navigation.navigate(tab.route);
             }}>
-            <Image source={tab.img} style={{width: 10, height: 10}} />
+            <Image
+              source={tab.img}
+              style={{width: dim[index].width, height: dim[index].height}}
+            />
 
             <Text
               style={{

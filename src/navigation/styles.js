@@ -1,18 +1,17 @@
 import {StyleSheet} from 'react-native';
-import {wp} from '../component/responsive';
+import {hp, wp} from '../component/responsive';
 
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    paddingBottom: wp(1),
     backgroundColor: '#2E2739',
-    borderRadius: 15,
-    height: 50,
+    borderRadius: 27,
+    height: hp(9),
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   mainContainer: {
     alignItems: 'center',
-    paddingTop: wp(3),
-    paddingBottom: wp(1),
     flex: 1,
   },
   labelText: {

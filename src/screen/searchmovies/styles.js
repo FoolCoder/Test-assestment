@@ -2,6 +2,12 @@ import {StyleSheet} from 'react-native';
 import {hp, wp} from '../../component/responsive';
 import {colors} from '../../constant';
 export const styles = StyleSheet.create({
+  head: {
+    backgroundColor: '#fff',
+    height: hp(17.5),
+    justifyContent: 'flex-end',
+    paddingBottom: 15,
+  },
   input: {
     flexDirection: 'row',
     alignItems: 'center',

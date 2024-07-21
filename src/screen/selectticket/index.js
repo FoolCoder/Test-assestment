@@ -10,7 +10,16 @@ import {
 import React from 'react';
 import {colors} from '../../constant';
 import {useNavigation} from '@react-navigation/native';
-import {arrow, map, notava, regular, selected, vip} from '../../constant/image';
+import {
+  arrow,
+  map,
+  minus,
+  notava,
+  plus,
+  regular,
+  selected,
+  vip,
+} from '../../constant/image';
 import moment from 'moment';
 import {styles} from './styles';
 import Button from '../../component/button';
@@ -50,11 +59,16 @@ const SelectTicket = ({route: {params}}) => {
       <TouchableOpacity style={[styles.map]}>
         <Image source={map} style={{width: '90%', height: wp(62)}} />
       </TouchableOpacity>
+      <View style={styles.zoom}>
+        <Image source={plus} style={{width: 30, height: 30}} />
+        <Image source={minus} style={{width: 30, height: 30}} />
+      </View>
       <View style={styles.line} />
       <View style={styles.footer}>
         <View style={styles.seats}>
           {data.map((itm, idx) => (
             <View
+              key={`seat ${idx}`}
               style={[
                 styles.seatbox,
                 {
@@ -72,14 +86,7 @@ const SelectTicket = ({route: {params}}) => {
             <Text>{'    '}x</Text>
           </Text>
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            width: '95%',
-            marginTop: 10,
-          }}>
+        <View style={styles.pay}>
           <View style={styles.price}>
             <Text style={{color: '#202C43', fontSize: 10}}>Total Price</Text>
             <Text style={{color: '#202C43', fontSize: 16, fontWeight: 700}}>

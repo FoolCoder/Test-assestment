@@ -2,6 +2,11 @@ import {StyleSheet} from 'react-native';
 import {hp, wp} from '../../component/responsive';
 import {colors} from '../../constant';
 export default StyleSheet.create({
+  head: {
+    backgroundColor: '#fff',
+    height: hp(15),
+    justifyContent: 'flex-end',
+  },
   headerrow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -13,8 +18,8 @@ export default StyleSheet.create({
     padding: 15,
   },
   block: {
-    width: wp(95),
-    height: 180,
+    width: wp(92.5),
+    height: hp(24),
     padding: 8,
     alignSelf: 'center',
     backgroundColor: '#fff',
@@ -28,7 +33,7 @@ export default StyleSheet.create({
     color: '#fff',
     fontSize: 18,
     paddingLeft: 15,
-    paddingBottom: 20,
+    paddingBottom: 18,
   },
   img: {
     width: wp(25),

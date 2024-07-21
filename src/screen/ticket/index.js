@@ -30,7 +30,9 @@ const Ticket = ({route: {params}}) => {
       <StatusBar translucent backgroundColor="transparent" />
       <View style={styles.head}>
         <View style={styles.headrow}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}>
             <Image source={arrow} style={styles.arrow} />
           </TouchableOpacity>
           <View
@@ -39,7 +41,11 @@ const Ticket = ({route: {params}}) => {
               justifyContent: 'center',
               width: 200,
             }}>
-            <Text style={{fontSize: 16, color: '#202C43'}}>{name}</Text>
+            <Text
+              numberOfLines={2}
+              style={{fontSize: 16, color: '#202C43', textAlign: 'center'}}>
+              {name}
+            </Text>
             <Text style={{fontSize: 12, color: '#61C3F2'}}>
               In theaters {moment(date).format('MMMM DD YYYY')}
             </Text>
@@ -52,12 +58,13 @@ const Ticket = ({route: {params}}) => {
           contentContainerStyle={{flexDirection: 'row', marginTop: 10}}
           horizontal
           showsHorizontalScrollIndicator={false}>
-          {['14', '15', '16', '17', '18'].map((itm, idx) => (
+          {['22', '23', '24', '25', '26'].map((itm, idx) => (
             <TouchableOpacity
+              key={`date ${idx}`}
               onPress={() => setSelectDate(idx)}
               style={[
                 styles.box,
-                {backgroundColor: selectDate === idx ? '#61C3F2' : '#fff'},
+                {backgroundColor: selectDate === idx ? '#61C3F2' : '#A6A6A61A'},
               ]}>
               <Text style={{color: selectDate === idx ? '#fff' : '#202C43'}}>
                 {itm} Jul
@@ -71,7 +78,7 @@ const Ticket = ({route: {params}}) => {
           horizontal
           showsHorizontalScrollIndicator={false}>
           {data.map((itm, idx) => (
-            <View>
+            <View key={`ticket ${idx}`}>
               <Text style={{color: '#202C43', fontSize: 12}}>
                 {itm.time}{' '}
                 <Text style={{color: '#8F8F8F'}}> Cinetech + hall 1</Text>

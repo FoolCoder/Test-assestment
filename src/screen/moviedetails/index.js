@@ -52,7 +52,7 @@ const MoviewDetails = ({route: {params}}) => {
             onPress={() => {
               navigation.goBack();
             }}>
-            <Image source={left} style={{width: 15, height: 18}} />
+            <Image source={left} style={{width: 7.5, height: 15}} />
           </TouchableOpacity>
           <Text
             style={{color: '#fff', left: 30, fontWeight: '600', fontSize: 14}}>

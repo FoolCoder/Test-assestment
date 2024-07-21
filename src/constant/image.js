@@ -24,6 +24,8 @@ import selected from '../assets/Seat.png';
 import vip from '../assets/vip.png';
 import notava from '../assets/notava.png';
 import regular from '../assets/regular.png';
+import plus from '../assets/plus.png';
+import minus from '../assets/minus.png';
 
 export {
   img,
@@ -52,4 +54,6 @@ export {
   vip,
   notava,
   regular,
+  plus,
+  minus,
 };

@@ -15,6 +15,7 @@ import styles from './styles';
 import {img, search} from '../../constant/image';
 import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import {showBottomTabbar} from '../../helper';
+import {hp, wp} from '../../component/responsive';
 
 const MoviewList = () => {
   const navigation = useNavigation();
@@ -58,17 +59,19 @@ const MoviewList = () => {
         backgroundColor="transparent"
         barStyle="dark-content"
       />
-      <View style={{backgroundColor: '#fff'}}>
+      <View style={styles.head}>
         <View style={styles.headerrow}>
           <Text style={{fontSize: 16, color: '#202C43'}}>Watch</Text>
           <TouchableOpacity
             hitSlop={{top: 10, bottom: 10, right: 10, left: 10}}
             onPress={() => navigation.navigate('SearchMovies')}>
-            <Image source={search} style={{width: 15, height: 15}} />
+            <Image source={search} style={{width: wp(4.5), height: wp(4.5)}} />
           </TouchableOpacity>
         </View>
       </View>
       <FlatList
+        style={{paddingTop: 20}}
+        contentContainerStyle={{paddingBottom: 25}}
         data={movies}
         keyExtractor={(item, index) => index.toString()}
         removeClippedSubviews

@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 50,
   },
-  arrow: {width: 7.5, height: 15, right: 50, bottom: 10},
+  arrow: {width: 7.5, height: 15, right: 10, bottom: 8},
   date: {
     marginTop: 80,
     padding: 15,

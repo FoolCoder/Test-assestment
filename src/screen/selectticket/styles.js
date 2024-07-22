@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 50,
   },
-  arrow: {width: 7.5, height: 15, right: 50, bottom: 10},
+  arrow: {width: 7.5, height: 15, right: 10, bottom: 10},
   map: {
     width: '90%',
     height: 190,
@@ -35,9 +35,9 @@ export const styles = StyleSheet.create({
   footer: {
     backgroundColor: '#fff',
     width: '100%',
-    height: '50%',
+    height: '60%',
     paddingBottom: 20,
-    marginTop: 8,
+    marginTop: 10,
   },
   seats: {
     flexDirection: 'row',
